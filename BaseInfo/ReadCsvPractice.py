@@ -125,7 +125,9 @@ def testWritecsv():
     )
     # 创建目录并导出 CSV
     os.makedirs("export", exist_ok=True)
-    df.to_csv("export/students.csv", index=False, encoding="utf-8-sig") #index=False不输出默认行号
+    df.to_csv(
+        "export/students.csv", index=False, encoding="utf-8-sig"
+    )  # index=False不输出默认行号
     print("✅ CSV 文件已成功创建：export/students.csv")
 
 

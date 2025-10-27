@@ -1,6 +1,7 @@
 import random
 import time
 
+
 def bubble_sort(arr):
     nlen = len(arr)
     for i in range(nlen - 1):
@@ -8,6 +9,7 @@ def bubble_sort(arr):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
     return arr
+
 
 def selection_sort(arr):
     nlen = len(arr)
@@ -19,6 +21,7 @@ def selection_sort(arr):
         arr[i], arr[minIndex] = arr[minIndex], arr[i]
     return arr
 
+
 def quick_sort(arr):
     if len(arr) < 2:
         return arr
@@ -28,13 +31,15 @@ def quick_sort(arr):
     right = [x for x in arr if x > pivot]
     return quick_sort(left) + mid + quick_sort(right)
 
+
 def merge_sort(arr):
     if len(arr) <= 1:
         return arr
-    mid = len(arr)//2
+    mid = len(arr) // 2
     left = merge_sort(arr[:mid])
     right = merge_sort(arr[mid:])
     return merge(left, right)
+
 
 def merge(left, right):
     result = []
@@ -49,6 +54,7 @@ def merge(left, right):
     result.extend(left[i:])
     result.extend(right[j:])
     return result
+
 
 def main():
     sortData = [random.randint(1, 100) for _ in range(100)]
@@ -78,6 +84,7 @@ def main():
     end = time.time()
     print(f"\nAfter sort  (first 10): {sortedData[:10]}")
     print(f"Time cost: {end - start:.6f}s")
+
 
 if __name__ == "__main__":
     main()
