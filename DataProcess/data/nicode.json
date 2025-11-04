@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "text": "こんにちは",
+        "lang": "Japanese"
+    },
+    {
+        "id": 2,
+        "text": "你好",
+        "lang": "Chinese"
+    },
+    {
+        "id": 3,
+        "text": "안녕하세요",
+        "lang": "Korean"
+    }
+]

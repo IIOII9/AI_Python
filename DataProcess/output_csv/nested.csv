@@ -1,0 +1,3 @@
+﻿id,user,roles
+1,"{'name': 'Eve', 'email': 'eve@example.com'}","['admin', 'editor']"
+2,"{'name': 'Frank', 'email': 'frank@example.com'}",['viewer']
