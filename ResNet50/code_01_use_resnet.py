@@ -4,11 +4,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input, decode_predictions
-
+from tensorflow.keras.models import load_model
 # -----------------------------
 # 加载模型
 # -----------------------------
-model = ResNet50(weights='imagenet')
+#model = ResNet50(weights='imagenet')
+model = load_model("D:/code/AI_Python/ResNet50_model.h5")
+#model.save("D:/code/AI_Python/ResNet50_model.h5")
 
 # -----------------------------
 # 加载图片并转成 base64 示例
