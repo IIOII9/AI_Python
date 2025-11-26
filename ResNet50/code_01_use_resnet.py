@@ -21,7 +21,18 @@ with open(img_path, "rb") as f:
 # base64 → Image → numpy
 # -----------------------------
 img_bytes = base64.b64decode(encoded_string)
-img = Image.open(BytesIO(img_bytes)).resize((224, 224))
+#默认为最近邻法
+#img = Image.open(BytesIO(img_bytes)).resize((224, 224))
+
+# 算法	描述
+# Image.NEAREST	最邻近插值，最快，但粗糙
+# Image.BILINEAR	双线性插值，平滑，速度较快
+# Image.BICUBIC	三次卷积插值，更平滑，速度稍慢
+# Image.LANCZOS	Lanczos 插值，高质量，速度最慢
+
+#双线性插值，平滑，速度较快
+img = Image.open(BytesIO(img_bytes)).resize((224, 224), resample=Image.BILINEAR)
+
 x = np.expand_dims(np.array(img), axis=0)
 x = preprocess_input(x)  # Keras 预处理
 
